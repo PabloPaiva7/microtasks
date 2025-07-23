@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Clock, TrendingUp, CheckCircle, Star, Target, Award, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -15,6 +14,11 @@ interface WorkJourney {
   estimatedEarnings: string;
   difficulty: "Iniciante" | "Intermediário" | "Avançado";
   icon: string;
+}
+
+interface DashboardProps {
+  selectedJourney?: WorkJourney;
+  onJourneySelect: (journey: WorkJourney) => void;
 }
 
 const todayGoals = [
@@ -75,14 +79,12 @@ const workShiftNotifications = [
   }
 ];
 
-export const Dashboard = () => {
-  const [selectedJourney, setSelectedJourney] = useState<WorkJourney | undefined>();
-
+export const Dashboard = ({ selectedJourney, onJourneySelect }: DashboardProps) => {
   return (
     <div className="space-y-6">
       {/* Seletor de Jornada de Trabalho */}
       <WorkJourneySelector 
-        onJourneySelect={setSelectedJourney}
+        onJourneySelect={onJourneySelect}
         selectedJourney={selectedJourney}
       />
 

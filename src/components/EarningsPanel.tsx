@@ -7,7 +7,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "@/hooks/use-toast";
+import { EarningsBudgetSimulator } from "@/components/EarningsBudgetSimulator";
 
 interface EarningEntry {
   id: string;
@@ -20,7 +22,23 @@ interface EarningEntry {
 
 const platforms = ["Appen", "Toloka", "ySense", "Clickworker", "SproutGigs", "Swagbucks"];
 
-export const EarningsPanel = () => {
+interface WorkJourney {
+  id: string;
+  name: string;
+  description: string;
+  weeklyHours: number;
+  dailyHours: number;
+  schedule: string;
+  estimatedEarnings: string;
+  difficulty: "Iniciante" | "Intermediário" | "Avançado";
+  icon: string;
+}
+
+interface EarningsPanelProps {
+  selectedJourney?: WorkJourney;
+}
+
+export const EarningsPanel = ({ selectedJourney }: EarningsPanelProps) => {
   const [earnings, setEarnings] = useState<EarningEntry[]>([
     {
       id: "1",
@@ -141,7 +159,13 @@ export const EarningsPanel = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <Tabs defaultValue="earnings" className="space-y-6">
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="earnings">Ganhos Reais</TabsTrigger>
+        <TabsTrigger value="simulator">Simulador de Orçamento</TabsTrigger>
+      </TabsList>
+      
+      <TabsContent value="earnings" className="space-y-6">
       {/* Estatísticas gerais */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <Card className="bg-gradient-success shadow-card">
@@ -333,6 +357,11 @@ export const EarningsPanel = () => {
           )}
         </CardContent>
       </Card>
-    </div>
+      </TabsContent>
+      
+      <TabsContent value="simulator">
+        <EarningsBudgetSimulator selectedJourney={selectedJourney} />
+      </TabsContent>
+    </Tabs>
   );
 };

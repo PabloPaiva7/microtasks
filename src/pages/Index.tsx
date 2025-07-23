@@ -6,23 +6,36 @@ import { TaskSchedule } from "@/components/TaskSchedule";
 import { EarningsPanel } from "@/components/EarningsPanel";
 import { LearningCenter } from "@/components/LearningCenter";
 
+interface WorkJourney {
+  id: string;
+  name: string;
+  description: string;
+  weeklyHours: number;
+  dailyHours: number;
+  schedule: string;
+  estimatedEarnings: string;
+  difficulty: "Iniciante" | "Intermediário" | "Avançado";
+  icon: string;
+}
+
 const Index = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
+  const [selectedJourney, setSelectedJourney] = useState<WorkJourney | undefined>();
 
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
-        return <Dashboard />;
+        return <Dashboard selectedJourney={selectedJourney} onJourneySelect={setSelectedJourney} />;
       case "tasks":
         return <TaskCenter />;
       case "schedule":
         return <TaskSchedule />;
       case "earnings":
-        return <EarningsPanel />;
+        return <EarningsPanel selectedJourney={selectedJourney} />;
       case "learning":
         return <LearningCenter />;
       default:
-        return <Dashboard />;
+        return <Dashboard selectedJourney={selectedJourney} onJourneySelect={setSelectedJourney} />;
     }
   };
 
