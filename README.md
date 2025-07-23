@@ -1,73 +1,75 @@
-# Welcome to your Lovable project
+# TaskShift - Sua Jornada de Trabalho Online
 
-## Project info
+https://earn-your-time-51.lovable.app/
 
-**URL**: https://lovable.dev/projects/add8719f-e057-4d6d-abc4-1e6e3e77dbeb
+## 📌 Sobre o Projeto
+O **TaskShift** é um SaaS inovador que permite que qualquer pessoa organize e gerencie suas atividades de microtarefas online em um só lugar.  
+Com uma interface moderna, recursos de gestão de tempo e conversão de ganhos em moeda estrangeira, o TaskShift transforma a experiência de quem busca **renda extra e produtividade no trabalho remoto**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Funcionalidades Atuais
+- **Dashboard Integrado:** visão geral da jornada de trabalho e status em tempo real.  
+- **Banco de Tarefas:** registro e organização das microtarefas diárias.  
+- **Escala de Trabalho:** definição de horários de expediente e pausas.  
+- **Relatório de Ganhos:** histórico completo, separação de valores recebidos e pendentes.  
+- **Conversor de Moeda (USD/BRL):** cálculo rápido e preciso para quem recebe em moeda estrangeira.  
+- **Simulador de Orçamento:** estimativa de ganhos com base no tempo disponível de trabalho.  
+- **Centro de Treinamento:** espaço para conteúdos de capacitação e aumento de produtividade.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/add8719f-e057-4d6d-abc4-1e6e3e77dbeb) and start prompting.
+## 🎯 Público-Alvo
+- Pessoas em busca de **renda extra**  
+- **Estudantes** com disponibilidade parcial  
+- **Freelancers** e profissionais autônomos  
+- **Desempregados** em busca de alternativas rápidas de rendimento  
+- Trabalhadores de **países emergentes** que se beneficiam de pagamentos em moeda estrangeira
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🌐 Integrações Futuras
+Planejamos integrar o TaskShift diretamente com as principais plataformas de microtarefas:  
+- **SproutGigs**  
+- **Amazon Mechanical Turk (MTurk)**  
+- **Appen**  
+- **Clickworker**  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Com isso, os usuários poderão **gerenciar múltiplas fontes de renda em um único painel**.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠️ Tecnologias Utilizadas
+- **Frontend:** Lovable (React + PWA)  
+- **Backend:** Supabase (banco de dados e autenticação)  
+- **Automação:** n8n (integração com alertas e tarefas externas)  
+- **IA Recomendações (futuro):** OpenAI API
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📅 Roadmap
+1. **MVP Atual:**  
+   - Conversor de moedas USD/BRL  
+   - Simulador de jornada de trabalho  
+   - Gestão de expediente em tempo real  
+   - Relatórios básicos de ganhos  
+2. **Versão 2.0:**  
+   - Integração com plataformas de microtarefas  
+   - Recomendações inteligentes de tarefas via IA  
+   - Alertas automáticos (WhatsApp, Telegram, E-mail)  
+3. **Futuro:**  
+   - Marketplace interno de microtarefas  
+   - Gamificação da produtividade e sistema de ranking
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/add8719f-e057-4d6d-abc4-1e6e3e77dbeb) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📊 Arquitetura Planejada
+```mermaid
+graph TD
+    A[Usuário] -->|Acessa| B[Frontend TaskShift]
+    B --> C[Supabase]
+    B --> D[n8n Automations]
+    D --> E[Plataformas de Microtarefas]
+    B --> F[OpenAI API - IA Recomendações]
+    C --> G[Relatórios e Histórico]
+    D --> H[Alertas e Integrações]
