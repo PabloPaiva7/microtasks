@@ -46,10 +46,17 @@ All colors MUST be HSL.
     --gradient-success: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(167 82% 55%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(148 32% 98%) 100%);
     
+    /* Futuristic gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(195 100% 50%) 0%, hsl(280 100% 60%) 50%, hsl(320 100% 50%) 100%);
+    --gradient-neon: linear-gradient(135deg, hsl(120 100% 40%) 0%, hsl(180 100% 40%) 50%, hsl(240 100% 60%) 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    
     /* Shadows */
     --shadow-card: 0 2px 8px -1px hsl(142 76% 36% / 0.1);
     --shadow-card-hover: 0 4px 20px -2px hsl(142 76% 36% / 0.15);
     --shadow-primary: 0 4px 14px 0 hsl(142 76% 36% / 0.25);
+    --shadow-neon: 0 0 20px hsl(195 100% 50% / 0.5);
+    --shadow-glow: 0 0 40px hsl(280 100% 60% / 0.3);
 
     --radius: 0.5rem;
 
@@ -116,5 +123,35 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-effect {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  .cyber-glow {
+    box-shadow: 0 0 20px hsl(195 100% 50% / 0.5), 0 0 40px hsl(280 100% 60% / 0.3);
+  }
+  
+  .neon-border {
+    border: 1px solid hsl(195 100% 50%);
+    box-shadow: 0 0 10px hsl(195 100% 50% / 0.5);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
