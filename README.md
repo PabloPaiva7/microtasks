@@ -1,6 +1,7 @@
 # TaskShift - Sua Jornada de Trabalho Online
 
 https://earn-your-time-21.lovable.app/
+
 https://silver-kangaroo-72a643.netlify.app/
 
 ## 📌 Sobre o Projeto
