@@ -1,6 +1,6 @@
 # TaskShift - Sua Jornada de Trabalho Online
 
-https://earn-your-time-51.lovable.app/
+https://earn-your-time-21.lovable.app/
 
 ## 📌 Sobre o Projeto
 O **TaskShift** é um SaaS inovador que permite que qualquer pessoa organize e gerencie suas atividades de microtarefas online em um só lugar.  
