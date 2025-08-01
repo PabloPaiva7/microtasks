@@ -1,6 +1,6 @@
 # TaskShift - Sua Jornada de Trabalho Online
 
-https://microtask.lovable.app/
+https://microtasks-blond.vercel.app/
 
 https://silver-kangaroo-72a643.netlify.app/
 
